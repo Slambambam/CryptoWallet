@@ -1,0 +1,82 @@
+<style>
+  body {
+    background: whitesmoke;
+  }
+</style>
+<div class="login-overlay">
+  <!--  <div class="logo">
+       Node Wallet<br> <span class="smaller">Wallet</span> 
+      </div> -->
+  <div class="form-container shadow">
+    <div class="icon">
+    <div class="login-logo-otr">
+            {{!-- <a href="/users/dashboard" class="brand-logo">
+                
+                <img src="/public/images/star.png" width="20">
+                <img src="/public/images/bitwallet.png" width="150">
+            </a> --}}
+        </div>
+      <!--<i class="mdi material-icons">account_circle</i>-->
+      <div class="header">
+        Register
+      </div>
+    </div>
+    <div class="inputs">
+      <form action="/users/register" method="POST">
+        <div class="container-fluid">
+          {{#if register_error}}
+          <div class="alert alert-fail">
+            {{register_error}}
+          </div>
+          {{/if}}
+          <div class="row left-align">
+            <div class="col s12">
+              <label for="f_name">First Name</label>
+              <input id="f_name" name="first_name" type="text" class="validate required">
+            </div>
+            <div class="col s12">
+              <label for="l_name">Last Name</label>
+              <input id="l_name" name="last_name" type="text" class="validate">
+            </div>
+            <div class="col s12">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" class="validate required email">
+            </div>
+            <div class="col s12">
+              <label for="passcode">Password</label>
+              <input id="passcode" name="password" type="password" class="validate required">
+            </div>
+            <div class="row">
+              <div class="col m4 s12">
+                <label for="passcode">Country Code</label>
+                <select name="country_code" class="required">
+                  <option value="+1" selected>+1</option>
+                  <option value="+91">+91</option>
+                </select>
+              </div>
+              <div class="col m8 s12">
+                <label for="number">Phone number</label>
+                <input id="number" name="phone" type="number" class="validate required">
+              </div>
+            </div>
+            <div class="buttons left-align">
+              <span class="right">
+                <a href="/users/login">Already have account?</a>
+              </span>
+            </div>
+            <div class="center-align">
+              <button class="waves-effect waves-light btn" type="submit">sign up</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script>
+  $("form").validate();
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+</script>

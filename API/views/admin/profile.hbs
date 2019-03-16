@@ -1,0 +1,44 @@
+<div class="profile-outer">
+    <div class="user_img center-align">
+        <img src="/public/images/user.jpg" width="90" class="circle">
+    </div>
+    <form autocomplete="off" method="POST" action="/admin/profile">
+        <div class="input-field ">
+            <input id="name" type="text" value="{{user.first_name}}" name="first_name" class="validate required">
+            <label for="name">First Name</label>
+        </div>
+        <div class="input-field ">
+            <input id="lname" type="text" value="{{user.last_name}}" name="last_name" class="validate required">
+            <label for="lname">Last Name</label>
+        </div>
+        <div class="input-field ">
+            <input id="email" type="email" readonly value="{{user.email}}" name="email" class="validate required">
+            <label for="email">Email</label>
+        </div>
+        <div class="input-field ">
+            <input id="phone" type="text" value="{{user.phone}}" name="phone" class="validate required">
+            <label for="phone">Phone</label>
+        </div>
+        <div class="input-field">
+            <input id="password" type="password" name="password" class="validate">
+            <label for="password">Password</label>
+        </div>
+        <div class="input-field">
+            <input id="cpassword" type="password" name="cpassword" class="validate">
+            <label for="cpassword">Confirm Password</label>
+        </div>
+        <div class="right-align">
+            <button type="submit" class="btn btn-theme">Update</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script>
+    $("form").validate({
+        rules: {
+            cpassword: {
+                equalTo: "#password"
+            }
+        }
+    });
+</script>

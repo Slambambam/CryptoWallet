@@ -1,0 +1,187 @@
+<div class="dash-outer">
+  <div class="container">
+    <div class="send-outer">
+      <div class="row">
+        <div class="col m12">
+          <div class="send-crypto-form">
+            <ul class="tabs col m12">
+              <li class="tab" *ngFor="let wallet of wallets">
+                <a href="#{{wallet.coin_type}}" class="active">{{wallet.coin_type}}</a>
+              </li>
+            </ul>
+            <ng-template ngFor let-wallet [ngForOf]="wallets">
+              <div id="{{wallet.coin_type}}" class="col tab-content">
+                <p>
+                  <b class="green-text">Wallet Balance : </b>
+                  <b>{{wallet.confirmed_amount}}</b>
+                </p>
+                <p>
+                  <b class="green-text">Your wallet address</b>:
+                  <b>{{wallet.main_address}}</b>
+                </p>
+                <form (ngSubmit)="sendCrypto(coins[wallet.coin_type])">
+                  <div class="input-field">
+                    <input id="{{wallet.coin_type}}-add" [(ngModel)]="coins[wallet.coin_type]['address']" name="address" type="text" class="validate m_b_0">
+                    <input [value]="wallet.coin_type" [(ngModel)]="coins[wallet.coin_type]['coin_type']" name="coin_type" type="hidden">
+                    <label for="{{wallet.coin_type}}-add">Enter recipient's {{wallet.coin_type}} address</label>
+                    <small>
+                      <i> Tip: Read the "How to" section below to generate a {{wallet.coin_type}} address on a faucet site.
+                      </i>
+                    </small>
+                  </div>
+                  <div class="input-field ">
+                    <input id="amount" type="text" name="amount" [(ngModel)]="coins[wallet.coin_type]['amount']" class="validate m_b_0">
+                    <label for="amount">Enter the {{wallet.coin_type}} amount to send.</label>
+                    <small>
+                      <i> Note: Please enter an amount that is less than the available wallet balance.</i>
+                    </small>
+                  </div>
+                  <div class="right-align">
+                    <button type="submit" class="btn btn-theme">Send</button>
+                  </div>
+                </form>
+                <div *ngIf="wallet.coin_type === 'btc'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's BTC address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: 2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF
+                      </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the BTC amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>
+                <div *ngIf="wallet.coin_type === 'ltc'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's LTC address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: 2N2PJEucf6QY2kNFuJ4chQEBoyZWszRQE16
+                      </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the LTC amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>
+                <div *ngIf="wallet.coin_type === 'eth'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's ETHER address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: 0x687422eea2cb73b5d3e242ba5456b782919afc85
+                      </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the ETHER amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>
+                <div *ngIf="wallet.coin_type === 'debc'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's DEBC address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: 0x687422eea2cb73b5d3e242ba5456b782919afc85
+                      </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the DEBC amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>
+                <div *ngIf="wallet.coin_type === 'bch'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's BCH address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: mgRoeWs2CeCEuqQmNfhJjnpX8YvtPACmCX </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the BCH amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>
+                <div *ngIf="wallet.coin_type === 'xrp'">
+                  <b>How to use this page?</b>
+                  <br />
+                  <ul class="user-steps">
+                    <li>
+                      <b>Step 1:</b>&nbsp; Enter the recipient's XRP address in the first input box above.
+                      <br/>
+                      <i>Tip: Use this address for testing: rLi3Kk4cdJCbgczaCtmsvS2AZDBQYN75Fa </i>
+                    </li>
+                    <li>
+                      <b>Step 2:</b>&nbsp; Enter the XRP amount to send.</li>
+                    <li>
+                      <b>Step 3:</b>&nbsp; Click SEND</li>
+                    <li>
+                      <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated. Click
+                      <a routerLink="/transaction" target="_blank" class="blue-text">
+                        <u>HERE</u>
+                      </a> to open the transactions page. You will see the transaction id there, present as a link. Clicking on
+                      the link will open the block explorer site that shows the status of the transaction. </li>
+
+                  </ul>
+                </div>
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

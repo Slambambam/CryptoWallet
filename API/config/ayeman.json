@@ -1,0 +1,73 @@
+{
+    "dbConnection": "mongodb://localhost:27017/wesleyWallet",
+    "bcryptSaltRounds": 10,
+    "btc": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "167.99.58.145",
+        "username": "bit_user",
+        "password": "64b7dd9f23f4b2e9e3a4f25526018e88"
+    },
+    "bch": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "159.203.173.31",
+        "username": "bit_user",
+        "password": "64b7dd9f23f4b2e9e3a4f25526018e88"
+    },
+    "namecoin": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "167.99.48.7",
+        "username": "bit_user",
+        "password": "64b7dd9f23f4b2e9e3a4f25526018e88"
+    },
+    "zcash": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "159.89.190.248",
+        "username": "bit_user",
+        "password": "64b7dd9f23f4b2e9e3a4f25526018e88"
+    },
+    "ltc": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "159.65.183.8",
+        "username": "bit_user",
+        "password": "64b7dd9f23f4b2e9e3a4f25526018e88"
+    },
+    "eth": {
+        "protocol": "http",
+        "path": "/eth",
+        "port": 80,
+        "host": "159.65.247.161",
+        "username": "bit_user",
+        "password": "64b7dd9f23f4b2e9e3a4f25526018e88"
+    },
+    "cryptocoins": [
+        "btc",
+        "bch",
+        "zcash",
+        "ltc",
+        "namecoin",
+        "eth",
+        "debc"
+    ],
+    "wallettypes": [
+        "normal",
+        "multisig"
+    ],
+    "contracts": {
+        "debc": {
+            "address":"0x499121e9367b3c7d52f41315cd8606691b088d26",
+            "gas": 50000,
+            "unlocktime": 5000,
+            "web3Uri": "ws://159.203.67.241:8546"
+        }
+    }
+}

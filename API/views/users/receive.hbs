@@ -1,0 +1,129 @@
+<div class="dash-outer">
+    <div class="container">
+        <div class="row">
+            {{#if current_transaction_status}}
+            <div class="alert alert-{{current_transaction_status}}">
+                <p>
+                    {{#eq current_transaction_status 'success'}} Transaction is successfull {{/eq}} {{#eq current_transaction_status 'fail'}}'Transaction
+                    is unsuccessfull' {{/eq}}
+                </p>
+            </div>
+            {{/if}}
+            <div class="recent-login-info td-history">
+                <p>Receive Cryptocurrency to your Wallet.</p>
+                <div class="card">
+
+                    <div class="card-content">
+                        <div class="row">
+
+                            <ul class="tabs">
+                                {{#each wallets}}
+                                <li class="tab">
+                                    <a href="#{{coin_type}}" class="active">{{coin_type}}</a>
+                                </li>
+                                {{/each}}
+                                <li class="indicator" style="right: 1px; left: 0px;"></li>
+                            </ul>
+                            {{#each wallets}}
+                            <div id="{{coin_type}}" class="col tab-content">
+
+
+                                {{#eq coin_type 'btc'}}
+                                <ul class="user-steps">
+                                    <li>
+                                        <b class="green-text">Wallet Balance : </b>
+                                        <b>{{confirmed_amount}}</b>
+                                    </li>
+                                    <li>
+                                        How to receive BTC to your Wallet?
+                                        <br>
+                                        <p>To receive BTC to your wallet here, you would need to first transfer it from another
+                                            wallet, Exchange etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                                    </li>
+                                    <li>Step 1: Copy your Wallet address provided below:</li>
+                                    <li>
+                                        <b class="green-text">Your wallet address</b>:
+                                        <b>{{main_address}}</b>
+                                    </li>
+                                    <li>Step 2: <a href="https://testnet.manu.backend.hamburg/faucet"  target="_blank">Click <u>HERE</u></a> to open a live BTC Faucet site. Paste the legacy address on the respective
+                                        field.
+                                    </li>
+                                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received
+                                        the BTC sent from the faucet site.</li>
+                                </ul>
+                                {{/eq}} {{#eq coin_type 'ltc'}}
+                                <ul class="user-steps">
+                                    <li>
+                                        <b class="green-text">Wallet Balance : </b>
+                                        <b>{{confirmed_amount}}</b>
+                                    </li>
+                                    <li>
+                                        How to receive LTC to your Wallet?
+                                        <br>
+                                        <p>To receive LTC to your wallet here, you would need to first transfer it from another
+                                            wallet, Exchange etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                                    </li>
+                                    <li>Step 1: Copy your Wallet address provided below:</li>
+                                    <li>
+                                        <b class="green-text">Your wallet address</b>:
+                                        <b>{{main_address}}</b>
+                                    </li>
+                                    <li>
+                                        Step 2: <a href="http://testnet.litecointools.com/" target="_blank">Click <u>HERE</u></a> to open a live LTC Faucet site. Paste the address on the respective field.</li>
+                                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received
+                                        the LTC sent from the faucet site.</li>
+                                </ul>
+                                {{/eq}} {{#eq coin_type 'bch'}}
+                                <ul class="user-steps">
+                                    <li>
+                                        <b class="green-text">Wallet Balance : </b>
+                                        <b>{{confirmed_amount}}</b>
+                                    </li>
+                                    <li>
+                                        How to receive BCH to your Wallet?
+                                        <br>
+                                        <p>To receive BCH to your wallet here, you would need to first transfer it from another
+                                            wallet, Exchange etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                                    </li>
+                                    <li>Step 1: Copy your Wallet address provided below:</li>
+                                    <li>
+                                        <b class="green-text">Your wallet address</b>:
+                                        <b>{{main_address}}</b>
+                                    </li>
+                                    <li>
+                                       <p> <b class="red-text">Important:</b> In testnet mode, you would need a legacy address for your above BCH address. Only then can you receive BCH in your wallet
+Copy the above address > Open <a href="https://cashaddr.bitcoincash.org/" target="_blank"><u>this link</u></a> Paste the address in the first field > click the ‘Convert’ button > Select the ‘Legacy’ tab beneath > Copy the generated legacy address.</p>
+<br>
+                                    </li>
+                                    <li> Step 2: <a href="https://testnet.manu.backend.hamburg/bitcoin-cash-faucet" target="_blank">Click <u>HERE</u></a> to open a live BCH Faucet site. Paste the address on the respective
+                                        field.
+                                    </li>
+                                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received
+                                        the BCH sent from the faucet site.</li>
+                                </ul>
+                                {{/eq}}
+                            </div>
+                            {{/each}}
+
+                        </div>
+
+
+                    </div>
+                    <div class="card-action right-align">
+                        <a href="/users/refresh" class="btn btn-theme">Refresh Wallet Balance</a>
+                    </div>
+                </div>
+                {{!--
+                <div class="right-align tran-btn">
+                    <a href="/users/send" class="btn btn-theme">Send crypto</a>
+                </div>--}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="amd-cmpt-otr">
+  <h5>Users Info:</h5>
+  <table class="bordered responsive-table striped highlight">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>BTC</th>
+        <th>BCH</th>
+        <th>LTC</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <ng-template ngFor let-user [ngForOf]="users">
+        <tr>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{getAmount('btc', user.wallets)}}</td>
+          <td>{{getAmount('bch', user.wallets)}}</td>
+          <td>{{getAmount('ltc', user.wallets)}}</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>

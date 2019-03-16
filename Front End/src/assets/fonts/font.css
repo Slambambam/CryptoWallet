@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'GothamLight';
+	src: url('./GothamLight.eot');
+	src: local('GothamLight'), url('./GothamLight.woff') format('woff'), url('./GothamLight.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_4008">Text with this font applied</p> */
+.fontsforweb_fontid_4008 {
+	font-family: 'GothamLight' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

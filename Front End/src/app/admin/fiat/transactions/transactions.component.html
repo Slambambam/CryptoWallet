@@ -1,0 +1,29 @@
+<div class="amd-cmpt-otr">
+  <h5>Transaction Info:</h5>
+<table class="bordered responsive-table striped highlight">
+    <!-- <ng-template *ngFor="let transaction of transactions;"> -->
+    <!-- {{transaction| json} -->
+    <!-- </ng-template>  -->
+    <tr>
+      <th>S.No</th>
+      <th>Transaction Type</th>
+      <th>Transaction Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Coin Bought/Sold</th>
+      <th>Amount</th>
+      <th>Transaction Status</th>
+    </tr>
+    <tr *ngFor="let item of transactions; let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{item.type}}</td>
+      <td>{{item.txid}}</td>
+      <td>{{item.user | json}}</td>
+      <td>{{item.user | json}}</td>
+      <td>{{item.crypto_amount}} {{item.coin}}</td>
+      <td>{{item.amount | currency}}</td>
+      <td>{{item.status}}</td>
+      
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,70 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li>
+    <a routerLink="/admin/profile">Profile</a>
+  </li>
+  <li>
+    <a (click)="logout()">Log Out</a>
+  </li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="/admin/dashboard" class="brand-logo">
+      <!-- <img src="/assets/images/star.png" width="20"> -->
+      <i class="material-icons button-collapse" data-activates="slide-out">menu</i>
+      <img src="/assets/images/logo.png" width="200" style="display: inline-block;
+      margin-top: 11px;">
+    </a>
+    <a href="javascript:void(0)" data-activates="mobile-demo" class="button-collapse">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <a routerLink="/admin/users">Users</a>
+      </li>
+      <li>
+        <a class="dropdown-button" href="javascript:void(0);" data-activates="dropdown1">
+          <!-- <img src="/assets/images/user.jpg" width="30" class="circle nav-user-circle"> -->
+          {{user.name}}
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li>
+        <a routerLink="/admin/profile">Profile</a>
+      </li>
+      <li>
+        <a (click)="logout()">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<ul id="slide-out" class="side-nav">
+  <li><div class="user-view">
+    <div class="background" style="background: #313ad0;"></div>
+    <a href="javascript:void(0);"><span class="white-text name">{{user.name}}</span></a>
+     <!-- Dropdown Trigger -->
+     <a class='dropdown-button white-text' href='#' data-activates='dropdown1'>{{user.email}}
+        <span class="material-icons white-text" style="position: relative; top:8px;">arrow_drop_down</span>
+      </a>
+      <ul id="dropdown1" class="dropdown-content">
+          <li>
+            <a routerLink="/profile">Profile</a>
+          </li>
+        </ul>
+  </div>
+  </li>
+  <li>
+    <a routerLink="/admin/users">Users</a>
+  </li>
+  <li>
+    <a routerLink="/admin/fiat/transactions">Fiat Trasactions</a>
+  </li>
+  <li>
+    <a routerLink="/admin/fiat/coin">Coin Settings</a>
+  </li>
+  <li>
+    <a routerLink="/admin/settings">Settings</a>
+  </li>
+</ul>
+

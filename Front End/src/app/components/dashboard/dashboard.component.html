@@ -1,0 +1,51 @@
+<div class="dash-outer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col l4 m6 s12" *ngFor="let wallet of wallets">
+                <a routerLink="/receive">
+                    <div class="media coin-balance">
+                        <div class="media-left">
+                            <img src="/assets/images/{{wallet.coin_type}}.png" alt="img" class="media-object" />
+                        </div>
+                        <div class="media-body">
+                            <p class="truncate">{{wallet.confirmed_amount}}</p>
+                            <p class="truncate">{{wallet.coin_type}} balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="right vm">
+                <a routerLink="/receive">
+                    <i class="material-icons">account_balance_wallet</i>
+                    <span class="view-more">View Wallet Balances</span>
+                </a>
+            </div>
+        </div>
+        <div class="dash-main-box">
+            <div class="row">
+                <div class="col l9 m7 s12">
+                    <div class="dash-main-content">
+                        <p class="welcome-user">Hello {{profile.name}},</p>
+                        <ul>
+                            <li>You can store your cryptocurrencies here and send them to other wallets. </li>
+                            <li>Click on
+                                <b class="blue-text">"Send Cryptos"</b> to send cryptocurrencies to other wallet.</li>
+                            <li>Click on
+                                <b class="blue-text">"Recieve Cryptos"</b> to recieve cryptocurrencies into this wallet.</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col l3 m5 s12">
+                    <h5>Get Started Here:</h5>
+                    <div class="center-align btn-otr">
+                        <a routerLink="/send" class="btn btn-theme">Send crypto</a>
+                        <a routerLink="/receive" class="btn btn-theme">Recieve crypto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container-->
+    </div>

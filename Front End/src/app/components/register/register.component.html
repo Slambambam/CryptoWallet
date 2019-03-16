@@ -1,0 +1,71 @@
+<div class="login-overlay">
+  <!--  <div class="logo">
+       Node Wallet<br> <span class="smaller">Wallet</span> 
+      </div> -->
+  <div class="form-container shadow">
+    <div class="icon">
+      <div class="login-logo-otr">
+      </div>
+      <!--<i class="mdi material-icons">account_circle</i>-->
+      <div class="header">
+        Register
+      </div>
+    </div>
+    <div class="inputs">
+      <form (ngSubmit)="registerUser()" [formGroup]="myform">
+        <div class="container-fluid">
+          <div class="row left-align">
+            <div class="col s12">
+              <label for="f_name">First Name</label>
+              <input id="f_name" name="first_name" formControlName="first_name" type="text" class="validate required">
+              <span class="white-text red" *ngIf="(first_name.dirty) && first_name.invalid">Invalid First Name</span>
+            </div>
+            <div class="col s12">
+              <label for="l_name">Last Name</label>
+              <input id="l_name" name="last_name" formControlName="last_name" type="text" class="validate">
+              <span class="white-text red" *ngIf="last_name.invalid  && (last_name.dirty)">Invalid Last Name</span>
+            </div>
+            <div class="col s12">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" formControlName="email" class="validate required email">
+              <span class="white-text red" *ngIf="email.invalid  && (email.dirty)">Invalid Email</span>
+            </div>
+            <div class="col s12">
+              <label for="passcode">Password</label>
+              <input id="passcode" name="password" type="password" formControlName="password" class="validate required">
+              <span class="white-text red" *ngIf="password.invalid  && (password.dirty)">Invalid Password</span>
+            </div>
+            <div class="row">
+              <div class="col m4 s12">
+                <label for="passcode">Country Code</label>
+                <select name="country_code" class="browser-default" (ngChange)="changeSelect(this)" formControlName="country_code">
+                  <option [ngValue]=""></option>
+                  <option [ngValue]="+1">+1</option>
+                  <option [ngValue]="+91">+91</option>
+                </select>
+                <span class="white-text red" *ngIf="country_code.invalid  && (country_code.dirty)">Invalid Country Code</span>
+              </div>
+              <div class="col m8 s12">
+                <label for="number">Phone number</label>
+                <input id="number" name="phone" formControlName="phone" type="number" class="validate required">
+                <span class="white-text red" *ngIf="phone.invalid  && (phone.dirty)">Invalid Phone Number</span>
+              </div>
+            </div>
+            <div class="buttons left-align">
+              <span class="right">
+                <a routerLink="/login">Already have account?</a>
+              </span>
+            </div>
+            <div class="center-align">
+              <button class="waves-effect waves-light btn" type="submit">sign up</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script>
+  $("form").validate();
+</script>

@@ -1,0 +1,99 @@
+<ul id="dropdown1" class="dropdown-content">
+    <li>
+      <a routerLink="/profile">Profile</a>
+    </li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a routerLink="/dashboard" class="brand-logo">
+        <!-- <img src="/assets/images/star.png" width="20"> -->
+        <img src="/assets/images/logo.png" width="200">
+      </a>
+      <a data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/transaction">Transaction History</a>
+        </li>
+        <li>
+            <a routerLink="/trade">Trade</a>
+          </li>
+        <li>
+          <a routerLink="/send">Send Crypto</a>
+        </li>
+        <li>
+          <a routerLink="/receive">Receive Crypto</a>
+        </li>
+        <li>
+          <a href="/assets/trezor/index.html">Cold Wallet</a>
+        </li>
+        <li>
+          <a class="dropdown-button" href="javascript:void(0)" data-activates="dropdown2">
+            <!-- <img src="/assets/images/user.jpg" width="30" class="circle nav-user-circle"> -->
+            {{user.name}}
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+          <ul id="dropdown2" class="dropdown-content">
+            <li>
+              <a routerLink="/profile">Profile</a>
+            </li>
+            <li>
+              <a (click)="logout()">Log Out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!--mobile-navbar-->
+      <ul class="side-nav left-align" id="mobile-demo">
+        <li>
+          <div class="user-view">
+            <div class="background" style="background: #313ad0;">
+              <!-- <img src="http://archives.materializecss.com/0.100.2/images/office.jpg"> -->
+            </div>
+            <!-- <a href="#!user"><img class="circle" src="http://archives.materializecss.com/0.100.2/images/yuna.jpg"></a> -->
+            <a href="javascript:void(0)">
+              <span class="white-text name">{{user.name}}</span>
+            </a>
+  
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-button ' href='#' data-activates='dropdown1'>{{user.email}}
+              <span class="material-icons">arrow_drop_down</span>
+            </a>
+  
+            <!-- Dropdown Structure -->
+  
+  
+          </div>
+        </li>
+        <!-- <li>
+          <a routerLink="/profile">Profile</a>
+        </li> -->
+        <li>
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/transaction">Transaction History</a>
+        </li>
+        <li>
+          <a routerLink="/send">Send Crypto</a>
+        </li>
+        <!-- <li>
+            <a routerLink="/trade">Trade</a>
+          </li> -->
+        <li>
+          <a routerLink="/receive">Receive Crypto</a>
+        </li>
+        <li>
+          <a href="/assets/trezor/index.html">Cold Wallet</a>
+        </li>
+  
+        <li>
+          <a (click)="logout()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

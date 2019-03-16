@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="admin-content">
+    <form (ngSubmit)="updateCryptoLookup()" [formGroup]="myform" class="z-depth-2">
+      <div class="">
+        <label for="name">Coin Type</label>
+        <select class="browser-default" formControlName="coin"  [(ngModel)]="coinObj"> 
+          <option value="">Choose Coin</option>
+          <option *ngFor="let item of coins"  [ngValue]="item">{{item.coin}}</option>
+        </select>
+        <span class="white-text red" *ngIf="(coin.dirty || coin.touched) && coin.invalid">Invalid Coin Type.</span>
+      </div>
+      <div class="">
+        <label for="name">Buy Amount</label>
+        <input id="name" type="number" formControlName="buy_amount" [(ngModel)]="coinObj.buy_amount" class="validate required">
+        <span class="white-text red" *ngIf="(buy_amount.dirty || buy_amount.touched) && buy_amount.invalid">Invalid Buy Amount.</span>
+      </div>
+      <div class="">
+        <label for="name">Sell Amount</label>
+        <input id="name" type="number" formControlName="sell_amount" [(ngModel)]="coinObj.sell_amount" class="validate required">
+        <span class="white-text red" *ngIf="(sell_amount.dirty || sell_amount.touched) && sell_amount.invalid">Invalid Sell Amount.</span>
+      </div>
+      <div class="right-align">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

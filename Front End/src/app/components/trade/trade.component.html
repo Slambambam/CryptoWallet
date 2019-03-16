@@ -1,0 +1,187 @@
+<div class="trade-otr">
+    <form (ngSubmit)="depositMoney()" [formGroup]="myform" method="POST">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="card">
+                    <p>Deposit
+                        <span class="right">
+                            <a (click)="toggleDeposit()" class="btn btn-theme" href="javascript:void(0);">
+                                Deposit
+                            </a>
+                        </span>
+                    </p>
+                    <div [hidden]="toggleDepositDiv">
+                        <div class="col s12">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" class="form-control" formControlName="cardNumber">
+                            <span class="white-text red" *ngIf="options.cardNumber.dirty && options.cardNumber.invalid">Invalid Card Number</span>
+                        </div>
+                        <div class="col s12">
+                            <label for="expiryMonth">Expiry Month</label>
+                            <input type="text" class="form-control" formControlName="expiryMonth">
+                            <span class="white-text red" *ngIf="options.expiryMonth.dirty && options.expiryMonth.invalid">Invalid Expiry Month</span>
+                        </div>
+                        <div class="col s12">
+                            <label for="expiryYear">Expiry Year</label>
+                            <input type="text" class="form-control" formControlName="expiryYear">
+                            <span class="white-text red" *ngIf="options.expiryYear.dirty && options.expiryYear.invalid">Invalid Expiry Yearr</span>
+                        </div>
+                        <div class="col s12">
+                            <label for="cvc">CVC</label>
+                            <input type="password" class="form-control" formControlName="cvc">
+                            <span class="white-text red" *ngIf="options.cvc.dirty && options.cvc.invalid">Invalid CVC</span>
+                        </div>
+                        <div class="col s12">
+                            <label for="amount">Amount</label>
+                            <input type="number" class="form-control" formControlName="amount">
+                            <span class="white-text red" *ngIf="options.amount.dirty && options.amount.invalid">Invalid CVC</span>
+                        </div>
+                        <div class="col s12 right-align">
+                            <button class="btn btn-theme" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="card-otr">
+        <div class="container">
+            <div class="row">
+                <div class="col l4 m6 s12">
+                    <div class="card">
+                        <p>Amount In Wallet:&nbsp;
+                            <b>{{amountInWallet}}$</b>
+                        </p>
+                        <form>
+                            <div>
+                                <div class="input-field">
+                                    <input type="text" [(ngModel)]="withdrawAmount" [ngModelOptions]="{standalone: true}" />
+                                    <label for="textarea1">Amount</label>
+                                </div>
+                            </div>
+                            <div class="right-align">
+                                <button type="button" (click)="withdrawAmountFN()" class="btn btn-theme">Withdraw</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col l4 m6 s12">
+                    <div class="card">
+                        <p>Buy Crypto: {{selectedBuyCryptoAmount}}$
+                            <span class="right">
+                                <select [(ngModel)]="cryptoType" (change)="fetchCryptoAmount()" [ngModelOptions]="{standalone: true}" class="browser-default">
+                                    <option value="btc">BTC</option>
+                                    <option value="bch">BCH</option>
+                                    <option value="ltc">LTC</option>
+                                    <option value="eth">ETHER</option>
+                                    <option value="debc">DEBC</option>
+                                    <option value="xrp">XRP</option>
+                                </select>
+                            </span>
+                        </p>
+                        <form>
+                            <div>
+                                <div class="input-field">
+                                    <input type="text" [(ngModel)]="buyAmount" placeholder="How much {{cryptoType}} want to buy" [ngModelOptions]="{standalone: true}" />
+                                    <label for="textarea1">Amount</label>
+                                </div>
+                            </div>
+                            <div class="right-align">
+                                <button type="button" (click)="buyCrypto()" class="btn btn-theme">Buy</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col l4 m6 s12">
+                    <div class="card">
+                        <p>Sell Crypto: {{selectedSellCryptoAmount}}$
+                            <span class="right">
+                                <select [(ngModel)]="sellCryptoType" (change)="fetchCryptoAmount()" [ngModelOptions]="{standalone: true}" class="browser-default">
+                                    <option value="btc">BTC</option>
+                                    <option value="bch">BCH</option>
+                                    <option value="ltc">LTC</option>
+                                    <option value="eth">ETHER</option>
+                                    <option value="debc">DEBC</option>
+                                    <option value="xrp">XRP</option>
+                                </select>
+                            </span>
+                        </p>
+                        <form>
+                            <div>
+                                <div class="input-field">
+                                    <input type="text" [(ngModel)]="sellAmount" placeholder="How much {{sellCryptoType}} want to sell" [ngModelOptions]="{standalone: true}" />
+                                    <label for="textarea1">Amount</label>
+                                </div>
+                            </div>
+                            <div class="right-align">
+                                <button type="button" (click)="sellCrypto()" class="btn btn-theme">SELL</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trade-table container card table-main">
+        <p>Amount In Wallet:&nbsp;
+            <b>{{amountInWallet}}$</b>
+            <span class="right">
+                <a>
+                    <i class="material-icons">view_quilt</i>&nbsp; View deposits
+                </a>
+            </span>
+        </p>
+        <table class="striped responsive-table pointer">
+            <thead>
+                <tr>
+                    <th>Amount</th>
+                    <th>Transaction Id</th>
+                    <th>Transaction Type</th>
+                    <th>Coin Bought/Sold</th>
+                    <th>Coin Amount</th>
+                    <th>Payment Gateway</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-template ng-template ngFor let-item [ngForOf]="transactions">
+                    <tr>
+                        <td>{{item.amount | currency}}</td>
+                        <td>{{item.txid || item.id}}</td>
+                        <td>{{item.type}}</td>
+                        <td>{{item.coin}}</td>
+                        <td>{{item.crypto_amount}}</td>
+                        <td>{{item.gateway}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.created_at | date:'MM-dd-yy, h:mm a'}}</td>
+                    </tr>
+                </ng-template>
+            </tbody>
+        </table>
+    </div>
+    <!-- <table class="container strip table card table-main" [hidden]="toggleDepositDiv">
+        <tr>
+            <th colspan="2">Amount In Wallet</th>
+            <th colspan="2"><b>{{amountInWallet}}$</b></th>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <th>Transaction Id</th>
+            <th>Transaction Type</th>
+            <th>Payment Gateway</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+        <ng-template ng-template ngFor let-item [ngForOf]="transactions">
+            <tr>
+                <td>{{item.amount}}</td>
+                <td>{{item.txid}}</td>
+                <td>{{item.type}}</td>
+                <td>{{item.gateway}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.created_at | date:'MM-dd-yy, h:mm a'}}</td>
+            </tr>
+        </ng-template>
+    </table> -->
+</div>

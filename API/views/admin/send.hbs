@@ -1,0 +1,136 @@
+<div class="dash-outer">
+    <div class="container">
+        <div class="send-outer">
+            <div class="row">
+                <div class="col m12">
+                    <div class="send-crypto-form">
+                        <ul class="tabs col m12">
+                            {{#each wallets}}
+                            <li class="tab">
+                                <a href="#{{coin_type}}" class="active">{{coin_type}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{#each wallets}} {{#eq coin_type 'btc'}} {{/eq}}
+                        <div id="{{coin_type}}" class="col tab-content">
+                            <p>
+                                <b class="green-text">Wallet Balance : </b>
+                                <b>{{confirmed_amount}}</b>
+                            </p>
+                            <p>
+                                <b class="green-text">Your wallet address</b>:
+                                <b>{{main_address}}</b>
+                            </p>
+                            <form method="POST" action="/users/transact">
+                                <div class="input-field">
+                                    <input id="{{coin_type}}-add" name="address" type="text" class="validate m_b_0">
+                                    <input value="{{coin_type}}" name="coin_type" type="hidden">
+                                    <label for="{{coin_type}}-add">Enter recipient's {{coin_type}} address</label>
+                                    <small>
+                                        <i> Tip: Read the "How to" section below to generate a {{coin_type}} address on a faucet
+                                            site.
+                                        </i>
+                                    </small>
+                                </div>
+                                <div class="input-field ">
+                                    <input id="amount" type="text" name="amount" class="validate m_b_0">
+                                    <label for="amount">Enter the {{coin_type}} amount to send.</label>
+                                    <small>
+                                        <i> Note: Please enter an amount that is less than the available wallet balance.</i>
+                                    </small>
+
+                                </div>
+                                <div class="right-align">
+                                    <button type="submit" class="btn btn-theme">Send</button>
+                                </div>
+                            </form>
+
+                            {{#eq coin_type 'btc'}}
+                            <p>
+                                <b>How to use this page?</b>
+                                <br />
+                                <ul class="user-steps">
+                                    <li>
+                                        <b>Step 1:</b>&nbsp; Enter the recipient's BTC address in the first input box above.
+                                        <br/>
+                                        <i>Tip: Use this address for testing: 2N8hwP1WmJrFF5QWABn38y63uYLhnJYJYTF {{!--
+                                            <br/> -or-
+                                            <br/> Click
+                                            <a href="https://testnet.manu.backend.hamburg/faucet" Target="_blank">HERE</a> to instantly generate a BTC address from a live Faucet site.--}}
+                                            </i> 
+                                    </li>
+                                    <li>
+                                        <b>Step 2:</b>&nbsp; Enter the BTC amount to send.</li>
+                                    <li>
+                                        <b>Step 3:</b>&nbsp; Click SEND</li>
+                                    <li>
+                                        <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated.
+                                        Click
+                                        <a href="/users/transaction" target="_blank" class="blue-text"><u>HERE</u></a> to open the transactions page. You will see the transaction id there, present
+                                        as a link. Clicking on the link will open the block explorer site that shows the
+                                        status of the transaction. </li>
+                                    
+                                </ul>
+                            </p>
+                            {{/eq}} {{#eq coin_type 'ltc'}}
+                            <p>
+                                <b>How to use this page?</b>
+                                <br />
+                                <ul class="user-steps">
+                                    <li>
+                                        <b>Step 1:</b>&nbsp; Enter the recipient's LTC address in the first input box above.
+                                        <br/>
+                                        <i>Tip: Use this address for testing: 2N2PJEucf6QY2kNFuJ4chQEBoyZWszRQE16 {{!--
+                                            <br/> -or-
+                                            <br/> Click
+                                            <a href="https://testnet.manu.backend.hamburg/faucet" Target="_blank">HERE</a> to instantly generate a BTC address from a live Faucet site.</i> --}}
+                                   </i> 
+                                    </li>
+                                    <li>
+                                        <b>Step 2:</b>&nbsp; Enter the LTC amount to send.</li>
+                                    <li>
+                                        <b>Step 3:</b>&nbsp; Click SEND</li>
+                                    <li>
+                                        <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated.
+                                        Click
+                                        <a href="/users/transaction" target="_blank" class="blue-text"><u>HERE</u></a> to open the transactions page. You will see the transaction id there, present
+                                        as a link. Clicking on the link will open the block explorer site that shows the
+                                        status of the transaction. </li>
+                                    
+                                </ul>
+                            </p>
+                            {{/eq}} {{#eq coin_type 'bch'}}
+                            <p>
+                                <b>How to use this page?</b>
+                                <br />
+                                <ul class="user-steps">
+                                    <li>
+                                        <b>Step 1:</b>&nbsp; Enter the recipient's BCH address in the first input box above.
+                                        <br/>
+                                        <i>Tip: Use this address for testing: mgRoeWs2CeCEuqQmNfhJjnpX8YvtPACmCX </i> {{!--
+                                            <br/> -or-
+                                            <br/> Click
+                                            <a href="https://testnet.manu.backend.hamburg/faucet" Target="_blank">HERE</a> to instantly generate a BTC address from a live Faucet site.</i> --}}
+                                    </li>
+                                    <li>
+                                        <b>Step 2:</b>&nbsp; Enter the BCH amount to send.</li>
+                                    <li>
+                                        <b>Step 3:</b>&nbsp; Click SEND</li>
+                                    <li>
+                                        <b>Step 4:</b>&nbsp; As soon as you click SEND, a transaction id will be generated.
+                                        Click
+                                        <a href="/users/transaction" target="_blank" class="blue-text"><u>HERE</u></a> to open the transactions page. You will see the transaction id there, present
+                                        as a link. Clicking on the link will open the block explorer site that shows the
+                                        status of the transaction. </li>
+                                    
+                                </ul>
+                            </p>
+                            {{/eq}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

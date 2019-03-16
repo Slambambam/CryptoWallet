@@ -1,0 +1,195 @@
+<div class="dash-outer">
+  <div class="container">
+    <div class="row">
+      <div class="recent-login-info td-history">
+        <p>Receive Cryptocurrency to your Wallet.</p>
+        <div class="card">
+
+          <div class="card-content">
+            <div class="row">
+              <ul class="tabs">
+                <li class="tab" *ngFor="let wallet of wallets">
+                  <a href="#{{wallet.coin_type}}" class="active">{{wallet.coin_type}}</a>
+                </li>
+                <li class="indicator" style="right: 1px; left: 0px;"></li>
+              </ul>
+              <ng-template ngFor let-wallet [ngForOf]="wallets">
+                <div id="{{wallet.coin_type}}" class="col tab-content">
+                  <ul class="user-steps" *ngIf="wallet.coin_type==='btc'">
+                    <li>
+                      <b class="green-text">Wallet Balance : </b>
+                      <b>{{wallet.confirmed_amount}}</b>
+                    </li>
+                    <li>
+                      How to receive BTC to your Wallet?
+                      <br>
+                      <p>To receive BTC to your wallet here, you would need to first transfer it from another wallet, Exchange
+                        etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                    </li>
+                    <li>Step 1: Copy your Wallet address provided below:</li>
+                    <li>
+                      <b class="green-text">Your wallet address</b>:
+                      <b>{{wallet.main_address}}</b>
+                    </li>
+                    <li>Step 2:
+                      <a href="https://testnet.manu.backend.hamburg/faucet" target="_blank">Click
+                        <u>HERE</u>
+                      </a> to open a live BTC Faucet site. Paste the legacy address on the respective field.
+                    </li>
+                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the BTC sent from
+                      the faucet site.</li>
+                  </ul>
+                  <ul class="user-steps" *ngIf="wallet.coin_type==='ltc'">
+                    <li>
+                      <b class="green-text">Wallet Balance : </b>
+                      <b>{{wallet.confirmed_amount}}</b>
+                    </li>
+                    <li>
+                      How to receive LTC to your Wallet?
+                      <br>
+                      <p>To receive LTC to your wallet here, you would need to first transfer it from another wallet, Exchange
+                        etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                    </li>
+                    <li>Step 1: Copy your Wallet address provided below:</li>
+                    <li>
+                      <b class="green-text">Your wallet address</b>:
+                      <b>{{wallet.main_address}}</b>
+                    </li>
+                    <li>
+                      Step 2:
+                      <a href="http://testnet.litecointools.com/" target="_blank">Click
+                        <u>HERE</u>
+                      </a> to open a live LTC Faucet site. Paste the address on the respective field.</li>
+                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the LTC sent from
+                      the faucet site.</li>
+                  </ul>
+                  <ul class="user-steps" *ngIf="wallet.coin_type==='bch'">
+                    <li>
+                      <b class="green-text">Wallet Balance : </b>
+                      <b>{{wallet.confirmed_amount}}</b>
+                    </li>
+                    <li>
+                      How to receive BCH to your Wallet?
+                      <br>
+                      <p>To receive BCH to your wallet here, you would need to first transfer it from another wallet, Exchange
+                        etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                    </li>
+                    <li>Step 1: Copy your Wallet address provided below:</li>
+                    <li>
+                      <b class="green-text">Your wallet address</b>:
+                      <b>{{wallet.main_address}}</b>
+                    </li>
+                    <li>
+                      <p>
+                        <b class="red-text">Important:</b> In testnet mode, you would need a legacy address for your above BCH address. Only
+                        then can you receive BCH in your wallet Copy the above address > Open
+                        <a href="https://cashaddr.bitcoincash.org/" target="_blank">
+                          <u>this link</u>
+                        </a> Paste the address in the first field > click the ‘Convert’ button > Select the ‘Legacy’ tab beneath
+                        > Copy the generated legacy address.</p>
+                      <br>
+                    </li>
+                    <li> Step 2:
+                      <a href="https://testnet.manu.backend.hamburg/bitcoin-cash-faucet" target="_blank">Click
+                        <u>HERE</u>
+                      </a> to open a live BCH Faucet site. Paste the address on the respective field.
+                    </li>
+                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the BCH sent from
+                      the faucet site.</li>
+                  </ul>
+                  <ul class="user-steps" *ngIf="wallet.coin_type==='eth'">
+                    <li>
+                      <b class="green-text">Wallet Balance : </b>
+                      <b>{{wallet.confirmed_amount}}</b>
+                    </li>
+                    <li>
+                      How to receive ETHEREUM to your Wallet?
+                      <br>
+                      <p>To receive ETHEREUM to your wallet here, you would need to first transfer it from another wallet, Exchange
+                        etc. For DEMO purpose lets transfer from a Faucet site.</p>
+                    </li>
+                    <li>Step 1: Copy your Wallet address provided below:</li>
+                    <li>
+                      <b class="green-text">Your wallet address</b>:
+                      <b>{{wallet.main_address}}</b>
+                    </li>
+                    <li> Step 2:
+                      <a href="http://faucet.ropsten.be:3001" target="_blank">Click
+                        <u>HERE</u>
+                      </a> to open a live ETHEREUM Faucet site. Paste the address on the respective field.
+                    </li>
+                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the ETHEREUM sent
+                      from the faucet site.</li>
+                  </ul>
+                  <ul class="user-steps" *ngIf="wallet.coin_type==='debc'">
+                    <li>
+                      <b class="green-text">Wallet Balance : </b>
+                      <b>{{wallet.confirmed_amount}}</b>
+                    </li>
+                    <li>
+                      How to receive this token to your Wallet?
+                    </li>
+                    <li>
+                        To receive this ERC20 token to your wallet here, you would need to first transfer it from another wallet, Exchange etc. ( as there are no Faucet sites for this yet )
+                    </li>
+                    <li>
+                      Step 1: Copy your Wallet address provided below:
+                    </li>
+                    <li>
+                      <b class="green-text">Your wallet address</b>:
+                      <b>{{wallet.main_address}}</b>
+                    </li>
+                    <li>Step 2: Open an live exchange where this ERC20 token is traded. Paste the address inside.</li>
+                    <li>Step 3: Click the 'Send' button ( or the respective button present in the exchange )</li>
+                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the ERC20 token sent from the faucet site.</li>
+                  </ul>
+                  <ul class="user-steps" *ngIf="wallet.coin_type==='xrp'">
+                    <li>
+                      <b class="green-text">Wallet Balance : </b>
+                      <b>{{wallet.confirmed_amount}}</b>
+                    </li>
+                    <li>
+                      How to receive XRP to your Wallet?
+                      <br>
+                      <p>To receive ETHEREUM to your wallet here, you would need to first transfer it from another wallet, Exchange
+                        etc. For DEMO XRP lets transfer from a Faucet site.</p>
+                    </li>
+                    <li>Step 1: Copy your Wallet address provided below:</li>
+                    <li>
+                      <b class="green-text">Your wallet address</b>:
+                      <b>{{wallet.main_address}}</b>
+                    </li>
+                    <li> Step 2:
+                        <a href="https://ripple.com/build/ripple-test-net/" target="_blank">Click
+                          <u>HERE</u>
+                        </a>
+                      open a live XRP Faucet site. Paste the address on the respective field.
+                    </li>
+                    <li>Step 3: Click the 'Send' button ( or the 'Give me some coins' button )</li>
+                    <li>Step 4: Wait for sometime for the network confirmations to happen.</li>
+                    <li>Step 5: Click on the REFRESH WALLET BALANCE button below to see if you have received the XRP sent
+                      from the faucet site.</li>
+                  </ul>
+                </div>
+              </ng-template>
+            </div>
+
+
+          </div>
+          <div class="card-action right-align">
+            <a (click)="refresWallet()" class="btn btn-theme">Refresh Wallet Balance</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

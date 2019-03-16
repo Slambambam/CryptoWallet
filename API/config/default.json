@@ -1,0 +1,84 @@
+{
+    "dbConnection": "mongodb://localhost:27017/wesleyWallet",
+    "bcryptSaltRounds": 10,
+    "btc": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "206.189.27.237",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "bch": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "206.189.27.131",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "xrp": {
+        "protocol": "wss",
+        "path": "/",
+        "port": 51233,
+        "host": "s.altnet.rippletest.net",
+        "username": "",
+        "password": "",
+        "uri": "wss://s.altnet.rippletest.net:51233"
+    },
+    "namecoin": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "167.99.48.7",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "zcash": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "159.89.190.248",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "ltc": {
+        "protocol": "http",
+        "path": "/",
+        "port": 18222,
+        "host": "206.189.112.12",
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "eth": {
+        "protocol": "http",
+        "path": "",
+        "port": 18222,
+        "host": "206.189.112.9",
+        "wsPort": 8546,
+        "username": "bit_user",
+        "password": "a4213460fee4faa0ee11aabf8e5ea68e1c723a0b99e63212551579f21e3b02fc"
+    },
+    "cryptocoins": [
+        "btc",
+        "bch",
+        "zcash",
+        "ltc",
+        "namecoin",
+        "eth",
+        "debc",
+        "xrp"
+    ],
+    "wallettypes": [
+        "normal",
+        "multisig"
+    ],
+    "contracts": {
+        "debc": {
+            "address":"0x499121e9367b3c7d52f41315cd8606691b088d26",
+            "gas": 100000,
+            "unlocktime": 5000,
+            "web3Uri": "ws://206.189.112.9:8546"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<style>
+  body{
+      background: whitesmoke;
+  }
+</style>
+<div class="login-overlay">
+  <!--  <div class="logo">
+       Node Wallet<br> <span class="smaller">Wallet</span> 
+      </div> -->
+  <div class="form-container shadow">
+    <div class="icon">
+      <i class="mdi material-icons">account_circle</i>
+      <div class="header">
+        Register
+      </div>
+    </div>
+    <div class="inputs">
+      <form action="/users/register" method="POST">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="f_name" name="first_name" type="text" class="validate">
+              <label for="f_name">First Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="l_name" name="last_name" type="text" class="validate">
+              <label for="l_name">Last Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="email" name="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="passcode" name="password" type="password" class="validate">
+              <label for="passcode">Password</label>
+            </div>
+            <div class="row">
+              <div class="col m4 s12">
+                <select name="country_code">
+                  <option value="" disabled selected>Code</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+              </div>
+              <div class="input-field col m8 s12">
+                <input id="number" name="phone" type="number" class="validate">
+                <label for="number">Phone number</label>
+              </div>
+            </div>
+            <div class="buttons left-align">
+              <span class="right">
+                <a href="/users/login">Already have account?</a>
+              </span>
+            </div>
+            <div class="center-align">
+              <button class="waves-effect waves-light btn" type="submit">sign up</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

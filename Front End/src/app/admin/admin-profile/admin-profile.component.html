@@ -1,0 +1,43 @@
+<div class="profile-outer">
+  <div class="user_img center-align">
+    <!-- <img src="/assets/images/user.jpg" width="90" class="circle"> -->
+  </div>
+
+  <form (ngSubmit)="updateUser()" [formGroup]="myform">
+    <div class="row left-align">
+      <div class="">
+        <label for="name">First Name</label>
+        <input id="name" type="text" formControlName="first_name" [(ngModel)]="pUser.first_name" name="first_name" class="validate required">
+        <span class="white-text red" *ngIf="(first_name.dirty || first_name.touched) && first_name.invalid">Invalid First Name</span>
+      </div>
+      <div class=" ">
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text" formControlName="last_name" [(ngModel)]="pUser.last_name"  name="last_name" class="validate required">
+        <span class="white-text red" *ngIf="(last_name.dirty || last_name.touched) && last_name.invalid">Invalid Last Name</span>
+      </div>
+      <div class=" ">
+        <label for="email">Email</label>
+        <input id="email" type="email" readonly formControlName="email" [(ngModel)]="pUser.email" name="email" class="validate required">
+        <span class="white-text red" *ngIf="(email.dirty || email.touched) && email.invalid">Invalid Email</span>
+      </div>
+      <div class=" ">
+        <label for="phone">Phone</label>
+        <input id="phone" type="text" formControlName="phone" name="phone" [(ngModel)]="pUser.phone" class="validate required">
+        <span class="white-text red" *ngIf="(phone.dirty || phone.touched) && phone.invalid">Invalid Phone Number</span>
+      </div>
+      <div class="">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" name="password" class="validate">
+        <span class="white-text red" *ngIf="(password.dirty || password.touched) && password.invalid">Invalid Password</span>
+      </div>
+      <div class="">
+        <label for="cpassword">Confirm Password</label>
+        <input id="cpassword" type="password" formControlName="cpassword" name="cpassword" class="validate">
+        <span class="white-text red" *ngIf="(cpassword.dirty || cpassword.touched) && cpassword.invalid">Invalid Confirm Password</span>
+      </div>
+      <div class="right-align">
+        <button type="submit" class="btn btn-theme">Update</button>
+      </div>
+    </div>
+  </form>
+</div>

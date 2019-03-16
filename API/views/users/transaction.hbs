@@ -1,0 +1,67 @@
+<div class="dash-outer">
+    <div class="container">
+        <div class="row">
+            {{#if current_transaction_status}}
+            <div class="alert alert-{{current_transaction_status}}">
+                <p>
+                    {{#eq current_transaction_status 'success'}} 'Transaction is successfull' {{/eq}} {{#eq current_transaction_status 'fail'}}'Transaction
+                    is failed' {{/eq}}
+                </p>
+            </div>
+            {{/if}}
+            <div class="recent-login-info td-history">
+                <div id="histroy" name="history">
+                    <p>Your Transactions:</p>
+                    <p class="black-text">
+                        This page shows the transactions of all the cryptocurrencies you SENT.
+                        <br/> Click on any transaction below to open the respective Block Explorer page.</p>
+                    <table class="striped responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Currency</th>
+                                <th>Amount</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#each transactions}}
+                            <tr onclick="openTransaction('{{coin_type}}','{{tx}}')">
+                                <td>
+                                    <img src="/public/images/{{coin_type}}.png" width="30" alt="img" />
+                                </td>
+                                <td>{{amount}}</td>
+                                <td>{{to_address}}</td>
+                                <td>{{created_at}}</td>
+                            </tr>
+                            {{/each}}
+                            {{#eq transactions.length 0}}
+                            <tr><td colspan="4">
+                                <p class="center-align">No data found</p>
+                            </td></tr>
+                            {{/eq}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openTransaction(type, tx) {
+        var url = '';
+        switch (type) {
+            case 'btc':
+                url = 'https://live.blockcypher.com/btc-testnet/tx/' + tx;
+                break;
+            case 'bch':
+                url = 'https://www.blocktrail.com/tBCC/tx/' + tx;
+                break;
+            case 'ltc':
+                url = 'https://chain.so/tx/LTCTEST/' + tx;
+                break;
+        }
+        window.open(url, '_blank')
+    }
+</script>

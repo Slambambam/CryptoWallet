@@ -1,0 +1,51 @@
+<div class="profile-outer">
+    <div class="user_img center-align">
+        <img src="/public/images/user.jpg" width="90" class="circle">
+    </div>
+    <form>
+        <div class="input-field ">
+            <input id="name" type="text" class="validate">
+            <label for="name">Name</label>
+        </div>
+        <div class="input-field ">
+            <input id="email" type="email" class="validate">
+            <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+            <input id="password" type="password" class="validate">
+            <label for="password">Password</label>
+        </div>
+        <div class="right-align">
+            <a type="button" class="btn btn-theme modal-trigger" href="#modal1">Edit</a>
+            <button type="submit" class="btn btn-theme">Update</button>
+        </div>
+    </form>
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+        <p class="flow-text">Update Info</p>
+        <form>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Profile pic</span>
+                    <input type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                </div>
+            </div>
+            <div class="input-field ">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+            </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Update</a>
+    </div>
+    </form>
+</div>

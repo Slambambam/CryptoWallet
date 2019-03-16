@@ -1,0 +1,40 @@
+<div class="dash-outer">
+  <div class="container">
+    <div class="row">
+      <div class="recent-login-info td-history">
+        <div id="histroy" name="history">
+          <p>Your Transactions:</p>
+          <p class="black-text">
+            This page shows the transactions of all the cryptocurrencies you SENT.
+            <br/> Click on any transaction below to open the respective Block Explorer page.</p>
+          <table class="striped responsive-table pointer">
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Amount</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <ng-template ng-template ngFor let-item [ngForOf]="transactions">
+                <tr  (click)="openTransaction(item.coin,item.txid)">
+                  <td>
+                    <img src="/assets/images/{{item.coin}}.png" width="30" alt="img" />
+                  </td>
+                  <td>{{item.amount}}</td>
+                  <td>{{item.created_at | date:'MM-dd-yy, h:mm a'}}</td>
+                </tr>
+              </ng-template>
+              <tr [hidden]="transactions.length">
+                <td colspan="4">
+                  <p class="center-align">No data found</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

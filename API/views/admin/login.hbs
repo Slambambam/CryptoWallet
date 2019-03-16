@@ -1,0 +1,58 @@
+<style>
+  body {
+    background: whitesmoke;
+  }
+</style>
+<div class="login-overlay">
+  <!--  <div class="logo">
+       Node Wallet<br> <span class="smaller">Wallet</span> 
+      </div> -->
+  <div class="form-container shadow">
+    <div class="icon">
+      <i class="mdi material-icons">account_circle</i>
+      <div class="header">
+        Login
+      </div>
+    </div>
+    <div class="inputs">
+      <form action="/admin/login" method="POST">
+        <div class="container-fluid">
+          {{#if login_error}}
+          <div class="alert alert-fail">
+              {{login_error}}
+          </div>
+          {{/if}}
+          <div class="row left-align">
+            <div class="col s12">
+              <input id="email" name="email" type="email" class="validate required email">
+              <label for="email">Email</label>
+            </div>
+            <div class="col s12">
+              <input id="passcode" name="password" type="password" class="validate required">
+              <label for="passcode">Password</label>
+            </div>
+            <div class="buttons left-align">
+              <span>
+                <!-- <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Remember me</label> -->
+                {{!-- <a href="/users/forgotpassword">Forgot password?</a> --}}
+              </span>
+              <span class="right">
+                <a href="/users/register">Sign up here</a>
+                <br/>
+
+              </span>
+            </div>
+            <div class="center-align">
+              <button type="submit" class="waves-effect waves-light btn">Login</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+<script>
+  $('form').validate();
+</script>

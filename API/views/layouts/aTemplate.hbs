@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{pageTitle}}</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/public/css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/public/css/style.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <ul id="dropdown1" class="dropdown-content">
+        <li>
+            <a href="/admin/profile">Profile</a>
+        </li>
+        <li>
+            <a href="/logout">Log Out</a>
+        </li>
+    </ul>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/admin/dashboard" class="brand-logo">
+                
+                <img src="/public/images/star.png" width="20">
+                <img src="/public/images/bitwallet.png" width="150">
+                {{!-- <img src="/public/images/Titan.png" width="150"> --}}
+            </a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+
+                <li>
+                    <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                        <img src="/public/images/user.jpg" width="30" class="circle nav-user-circle">{{session.name}}
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    {{!--
+                    <a href="/users/profile">Settings</a> --}}
+                </li>
+                <li>
+                    <a href="/users/transaction">Transactions</a>
+                </li>
+                <li>
+                    <a href="/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {{{body}}}
+    <ul id="slide-out" class="side-nav fixed">
+        <li>
+            <a href="/admin/users">Users</a>
+        </li>
+    </ul>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/public/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/public/js/myscript.js"></script>
+</body>
+
+</html>
