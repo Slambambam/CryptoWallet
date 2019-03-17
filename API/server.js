@@ -1,17 +1,16 @@
-//to view es6 capabilities see http://node.green/
-//node v8-options es6 module syntax currently under development (2016/06/25)
-import { join } from 'path';
-import express, { static } from 'express';
-import expressHbs from 'express-handlebars';
-import cookieParser from 'cookie-parser';
-import { json, urlencoded } from 'body-parser';
-import routes from './routes/index';
+const { join } = require('path');
+const express = require('express');
+const { static } = express;
+const expressHbs = require('express-handlebars');
+const cookieParser = require('cookie-parser');
+const { json, urlencoded } = require('body-parser');
+const routes = require('./routes/index');
 let app = express();
-import { connect } from 'mongoose';
-import { get } from 'config';
-import morgan from 'morgan';
+const { connect } = require('mongoose');
+const { get } = require('config');
+const morgan = require('morgan');
 connect(get('dbConnection'));
-import { version, migrate } from 'commander';
+const { version, migrate } = require('commander');
 
 version('0.1.0')
     .option('-m, --migrate')
@@ -87,4 +86,3 @@ app.use(function (err, req, res, next) {
 });
 //server
 app.listen(app.get('port'), () => console.log('Listening on http://localhost:' + app.get('port')));
-
