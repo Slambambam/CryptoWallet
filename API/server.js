@@ -6,18 +6,20 @@ const cookieParser = require('cookie-parser');
 const { json, urlencoded } = require('body-parser');
 const routes = require('./routes/index');
 let app = express();
-const { connect } = require('mongoose');
+const mongoose = require('mongoose');
+mongoose.set('useCreateIndex', true)
+mongoose.connect('mongodb://127.0.0.1:27017/wesleyWallet', { useNewUrlParser: true });
 const { get } = require('config');
 const morgan = require('morgan');
-connect(get('dbConnection'));
+
 const { version, migrate } = require('commander');
 
-version('0.1.0')
-    .option('-m, --migrate')
-    .parse(process.argv);
-if (migrate) {
-    require('./migration/index');
-}
+//version('0.1.0')
+ //   .option('-m, --migrate')
+ //       .parse(process.argv);
+ //   if (migrate) {
+ //       require('./migration/index');
+ //  }
 
 
     //settings

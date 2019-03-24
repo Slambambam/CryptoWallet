@@ -1,5 +1,5 @@
 {
-    "dbConnection": "mongodb://localhost:27017/wesleyWallet",
+    "dbConnection": "mongodb://127.0.0.1:27017/wesleyWallet",
     "bcryptSaltRounds": 10,
     "btc": {
         "protocol": "http",

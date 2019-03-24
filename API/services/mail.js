@@ -8,7 +8,7 @@ sendMail = async (to, toName, sub, body) => {
                 email: to,
                 name: toName
             }],
-            from_email: 'no-reply@mail.com',
+            from_email: 'dev@crypticcash.org',
             subject: sub,
             html: body
         }
