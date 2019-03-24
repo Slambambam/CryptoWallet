@@ -45,8 +45,8 @@ export class AdminLoginComponent implements OnInit {
       this.auth.loginAsAdmin(this.myform.value).subscribe((res) => {
         console.log(res)
         if (res.status === 'success') {
-          localStorage.setItem('access_token', res.body.access_token[0].token);
-          localStorage.setItem('profile', JSON.stringify(res.body));
+          //localStorage.setItem('access_token', res.body.access_token[0].token);
+          //localStorage.setItem('profile', JSON.stringify(res.body));
           this.router.navigate(['/admin/dashboard']);
         }
         Materialize.toast(res.message, 4000);

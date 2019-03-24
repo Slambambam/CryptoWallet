@@ -12,7 +12,7 @@ export class AuthService {
     return localStorage.getItem('access_token');
   }
   isLoggedIn() {
-    // console.log("ACCESS TOKEN ", localStorage.getItem('access_token'));
+    console.log("ACCESS TOKEN ", localStorage.getItem('access_token'));
     return localStorage.getItem('access_token') !== null;
   }
   updateLocalUser(user) {

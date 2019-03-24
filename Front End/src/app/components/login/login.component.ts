@@ -25,11 +25,11 @@ export class LoginComponent implements OnInit {
     this.createForm();
   }
   createFormControls() {
-    this.user.email = new FormControl('james@bitexchange.systems', [
+    this.user.email = new FormControl('ceci10@gmail.com', [
       Validators.required,
       Validators.email
     ]);
-    this.user.password = new FormControl('pwd123456', [
+    this.user.password = new FormControl('slambambam', [
       Validators.required,
       Validators.minLength(6)
     ]);

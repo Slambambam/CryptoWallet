@@ -1,12 +1,90 @@
 <div class="dash-outer">
     <div class="container">
         <div class="row">
+            <div _ngcontent-c4="" class="row">
+            <!--bindings={ "ng-reflect-ng-for-of": "[object Object],[object Object"}
+            -->
+            <div _ngcontent-c4="" class="col l4 m6 s12">
+                <a _ngcontent-c4="" routerlink="/receive" ng-reflect-router-link="/receive" href="#/receive">
+                    <div _ngcontent-c4="" class="media coin-balance">
+                        <div _ngcontent-c4="" class="media-left">
+                            <img _ngcontent-c4="" alt="img" class="media-object" src="/assets/images/btc.png">
+                        </div>
+                        <div _ngcontent-c4="" class="media-body">
+                            <p _ngcontent-c4="" class="truncate">1290.0000992</p>
+                            <p _ngcontent-c4="" class="truncate">BTC Balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div><div _ngcontent-c4="" class="col l4 m6 s12">
+                <a _ngcontent-c4="" routerlink="/receive" ng-reflect-router-link="/receive" href="#/receive">
+                    <div _ngcontent-c4="" class="media coin-balance">
+                        <div _ngcontent-c4="" class="media-left">
+                            <img _ngcontent-c4="" alt="img" class="media-object" src="/assets/images/ltc.png">
+                        </div>
+                        <div _ngcontent-c4="" class="media-body">
+                            <p _ngcontent-c4="" class="truncate">-0.000958</p>
+                            <p _ngcontent-c4="" class="truncate">LTC Balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div><div _ngcontent-c4="" class="col l4 m6 s12">
+                <a _ngcontent-c4="" routerlink="/receive" ng-reflect-router-link="/receive" href="#/receive">
+                    <div _ngcontent-c4="" class="media coin-balance">
+                        <div _ngcontent-c4="" class="media-left">
+                            <img _ngcontent-c4="" alt="img" class="media-object" src="/assets/images/bch.png">
+                        </div>
+                        <div _ngcontent-c4="" class="media-body">
+                            <p _ngcontent-c4="" class="truncate">0.276576</p>
+                            <p _ngcontent-c4="" class="truncate">BCH Balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div><div _ngcontent-c4="" class="col l4 m6 s12">
+                <a _ngcontent-c4="" routerlink="/receive" ng-reflect-router-link="/receive" href="#/receive">
+                    <div _ngcontent-c4="" class="media coin-balance">
+                        <div _ngcontent-c4="" class="media-left">
+                            <img _ngcontent-c4="" alt="img" class="media-object" src="/assets/images/eth.png">
+                        </div>
+                        <div _ngcontent-c4="" class="media-body">
+                            <p _ngcontent-c4="" class="truncate">2.97656</p>
+                            <p _ngcontent-c4="" class="truncate">ETH Balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div><div _ngcontent-c4="" class="col l4 m6 s12">
+                <a _ngcontent-c4="" routerlink="/receive" ng-reflect-router-link="/receive" href="#/receive">
+                    <div _ngcontent-c4="" class="media coin-balance">
+                        <div _ngcontent-c4="" class="media-left">
+                            <img _ngcontent-c4="" alt="img" class="media-object" src="/assets/images/crypticcash.png">
+                        </div>
+                        <div _ngcontent-c4="" class="media-body">
+                            <p _ngcontent-c4="" class="truncate">28300000</p>
+                            <p _ngcontent-c4="" class="truncate">CRYP Balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div><div _ngcontent-c4="" class="col l4 m6 s12">
+                <a _ngcontent-c4="" routerlink="/receive" ng-reflect-router-link="/receive" href="#/receive">
+                    <div _ngcontent-c4="" class="media coin-balance">
+                        <div _ngcontent-c4="" class="media-left">
+                            <img _ngcontent-c4="" alt="img" class="media-object" src="/assets/images/xrp.png">
+                        </div>
+                        <div _ngcontent-c4="" class="media-body">
+                            <p _ngcontent-c4="" class="truncate">-192999</p>
+                            <p _ngcontent-c4="" class="truncate">XRP Balance</p>
+                        </div>
+                    </div>
+                </a>
+            </div>            
+        </div>
 
-            <div class="col l4 m6 s12" *ngFor="let wallet of wallets">
+        <!--   <div class="col l4 m6 s12" *ngFor="let wallet of wallets">
                 <a routerLink="/receive">
                     <div class="media coin-balance">
                         <div class="media-left">
                             <img src="/assets/images/{{wallet.coin_type}}.png" alt="img" class="media-object" />
+
                         </div>
                         <div class="media-body">
                             <p class="truncate">{{wallet.confirmed_amount}}</p>
@@ -15,7 +93,7 @@
                     </div>
                 </a>
             </div>
-
+        -->
             <div class="right vm">
                 <a routerLink="/receive">
                     <i class="material-icons">account_balance_wallet</i>
@@ -27,7 +105,7 @@
             <div class="row">
                 <div class="col l9 m7 s12">
                     <div class="dash-main-content">
-                        <p class="welcome-user">Hello {{profile.name}},</p>
+                        <p class="welcome-user">Hi {{profile.name}},</p>
                         <ul>
                             <li>You can store your cryptocurrencies here and send them to other wallets. </li>
                             <li>Click on

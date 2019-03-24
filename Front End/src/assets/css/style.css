@@ -1,6 +1,6 @@
 body{
 	position: relative;
-	font-family: 'Montserrat';	
+	font-family: 'Raleway';
 }
 
 a,a:focus,a:active,a:visited,a:hover{
@@ -9,7 +9,7 @@ a,a:focus,a:active,a:visited,a:hover{
 }
 .alert
 {
-	
+
     display: inline-block;
     width: 100%;
     padding: 0 1em;
@@ -43,7 +43,7 @@ a,a:focus,a:active,a:visited,a:hover{
     color: white;
     font-size: 27px;
     letter-spacing: 1px;
-    top: 70px;
+    top: 20px;
 }
 .login-overlay .logo .smaller {
     font-size: 16px;
@@ -107,8 +107,8 @@ input:-webkit-autofill {
     top: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid #3139d0;
-    background-color: #3139d0;
+    border: 2px solid #ffa000;
+    background-color: #000000;
     z-index: 0;
 
 }
@@ -123,21 +123,21 @@ input:-webkit-autofill {
 }
 .btn,.btn:hover,.btn:focus,.btn:active{
 	color: #fff !important;
-	background: #7F00FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #1b1b91, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1b1b91, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #000000;  /* fallback for old browsers */
+//background: -webkit-linear-gradient(to right, #000000, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+//background: linear-gradient(to right, #000000, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 input:focus{
-	border-bottom: 1px solid #3139d0 !important;
-    -webkit-box-shadow: 0 1px 0 0 #3139d0 !important;
-    box-shadow: 0 1px 0 0 #3139d0 !important;
+	border-bottom: 1px solid #000000 !important;
+    -webkit-box-shadow: 0 1px 0 0 #000000 !important;
+    box-shadow: 0 1px 0 0 #000000 !important;
 }
 input:focus+label{
-	color: #3139d0 !important;
+	color: #000000 !important;
 }
 nav{
-	background:#3139d0 !important;
+	background:#000000  !important;
 	padding: 0 2em;
 }
 nav a,nav a:hover,nav a:focus,
@@ -153,6 +153,7 @@ nav .brand-logo{
 }
 nav .brand-logo img:first-child{
 	    position: absolute;
+		margin-top: -5px;
     top: 12px;
     display: inline-block;
     left: -4px;
@@ -388,7 +389,7 @@ table{
 	margin: 0 12px 0 0;
 }
 
-body::-webkit-scrollbar, 
+body::-webkit-scrollbar,
 table.responsive-table tbody::-webkit-scrollbar,
 .modal::-webkit-scrollbar {
   width: 8px;

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { AuthService, WalletService } from '../../services/index';
 import { Title } from '@angular/platform-browser';
-// import '../../../assets/js/materialize.min.js';
+//import '../../../assets/js/materialize.min.js';
 declare var Materialize: any;
 declare var $: any;
 @Component({

@@ -7,7 +7,7 @@ const getHost = () => {
 };
 
 const TEST_NET =  true;
-const apiURI = _isDev ? 'http://localhost:3000/api/' : `/api/`;
+const apiURI = _isDev ? 'http://127.0.0.1:3000/api/' : `/api/`;
 export const ENV = {
   BASE_URI: getHost(),
   BTC_EXPLORER: TEST_NET ? 'https://live.blockcypher.com/btc-testnet/tx/' : 'https://live.blockcypher.com/tx/',

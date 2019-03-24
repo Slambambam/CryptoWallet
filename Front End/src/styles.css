@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
 	position: relative;
-	font-family: 'Montserrat';	
+	font-family: 'Raleway';
 }
 
 a,a:focus,a:active,a:visited,a:hover{
@@ -10,7 +10,7 @@ a,a:focus,a:active,a:visited,a:hover{
 }
 .alert
 {
-	
+
     display: inline-block;
     width: 100%;
     padding: 0 1em;
@@ -124,9 +124,9 @@ input:-webkit-autofill {
 }
 .btn,.btn:hover,.btn:focus,.btn:active{
 	color: #fff !important;
-	background: #7F00FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #1b1b91, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1b1b91, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #000000, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #000000, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 input:focus{
@@ -138,7 +138,7 @@ input:focus+label{
 	color: #3139d0 !important;
 }
 nav{
-	background:#3139d0 !important;
+	background:#000000 !important;
 	padding: 0 2em;
 }
 nav a,nav a:hover,nav a:focus,
@@ -147,6 +147,7 @@ nav a:visited,nav a:active{
 }
 nav .brand-logo{
 	font-size: 1.5rem;
+	size: 200px;
 }
 nav .brand-logo{
 	position: relative;
@@ -156,7 +157,7 @@ nav .brand-logo{
 nav .brand-logo img:first-child{
 	position: absolute;
     display: inline-block;
-    margin-top: 11px;
+    margin-top: -2px;
 }
 /*nav .brand-logo img:last-child{
 	filter: invert(100%);
@@ -356,7 +357,7 @@ display: none;
 	width: 100%;
 }
 .blue-text {
-    color: #291c9d !important;
+    color: #fbc02d !important;
 }
 .card-action a,.card-action a:hover,
 .card-action a:focus,.card-action a:active{
@@ -396,7 +397,7 @@ table{
 	margin: 0 12px 0 0;
 }
 
-body::-webkit-scrollbar, 
+body::-webkit-scrollbar,
 table.responsive-table tbody::-webkit-scrollbar,
 .modal::-webkit-scrollbar {
   width: 8px;
@@ -489,7 +490,7 @@ select.browser-default{
     margin: 3em auto;
 }
 .amd-cmpt-otr h5{
-    color: #313ad0;
+    color: #000000;
     font-size: 20px;
     margin-bottom: 1em;
 }
@@ -525,7 +526,7 @@ select.browser-default{
 	}
 	nav .brand-logo img:first-child {
 		position: relative;
-		margin-top: 14px;
+		margin-top: 0px;
 	}
 	nav .brand-logo {
 		position: static;
